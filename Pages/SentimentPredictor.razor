@@ -1,0 +1,54 @@
+﻿
+@using FinalBlazor_ServerApp.Model
+@using FinalBlazor_ServerApp.Services
+@inject HttpClient Http
+
+@page "/sentiment-predictor"
+@inject SentimentService SentimentService
+
+
+<div class="container mt-5">
+    <h3>Sentiment Predictor</h3>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter text" @bind="inputText" />
+        <button class="btn btn-primary" @onclick="AnalyzeSentiment">Analyze</button>
+   </div>
+    @if (predictionResult != null)
+    {
+        <div class="alert alert-info">
+            <p>Overall Prediction: @(InterpretSentiment(predictionResult.PredictedLabel))</p>
+            <p>Negative Score: @predictionResult.Score[0]</p>
+            <p>Positive Score: @predictionResult.Score[1]</p>
+        </div>
+    }
+</div>
+
+
+@code {
+    private string inputText;
+    private ModelOutput predictionResult;
+
+    private async Task AnalyzeSentiment()
+    {
+        ModelInput modelInput = new ModelInput { Text = inputText };
+        var request = modelInput;
+       // var response = await SentimentService.PredictSentimentAsync(request);
+        var response = await Http.PostAsJsonAsync("predict", request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            predictionResult = await response.Content.ReadFromJsonAsync<ModelOutput>();
+        }
+        else
+        {
+            // Handle HTTP error (e.g., log it, show an error message)
+        }
+    }
+
+    private string InterpretSentiment(float predictedLabel)
+    {
+        // Assuming a label greater than 0.5 indicates positive sentiment
+        // Adjust this logic based on how your model interprets the predictedLabel
+        return predictedLabel > 0.5 ? "Positive" : "Negative";
+    }
+}
