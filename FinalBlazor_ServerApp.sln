@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalBlazor_ServerApp", "FinalBlazor_ServerApp.csproj", "{EDDB44D7-566B-409E-9F53-5D43CC7E4A00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalBlazor_ServerApp", "FinalBlazor_ServerApp.csproj", "{EDDB44D7-566B-409E-9F53-5D43CC7E4A00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysisWebAPI", "WEB_API\SentimentAnalysisWebAPI\SentimentAnalysisWebAPI.csproj", "{49E90BA0-6489-4B47-8ED1-D047278E41CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EDDB44D7-566B-409E-9F53-5D43CC7E4A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDDB44D7-566B-409E-9F53-5D43CC7E4A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDDB44D7-566B-409E-9F53-5D43CC7E4A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E90BA0-6489-4B47-8ED1-D047278E41CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E90BA0-6489-4B47-8ED1-D047278E41CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E90BA0-6489-4B47-8ED1-D047278E41CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E90BA0-6489-4B47-8ED1-D047278E41CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
