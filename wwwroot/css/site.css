@@ -66,6 +66,7 @@ a, .btn-link {
 /* wwwroot/css/app.css */
 .input-group .form-control {
     max-width: 300px; /* Limit the width of the input box */
+    height: 80px;
 }
 
 .btn-custom {
